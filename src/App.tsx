@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./assets/styles/index.scss";
+import Content from "./components/Content";
+import { Filter, SmallFilter } from "./components/Filter";
+import { Header } from "./components/Header";
+import { useMediaQuery } from "./hooks/useMediaQuery";
 
 function App() {
+  const matches = useMediaQuery("(min-width: 768px)");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      {matches ? <Filter /> : <SmallFilter />}
+      <Content />
     </div>
   );
 }
