@@ -9,7 +9,6 @@ const ThemeToggle = () => {
   const { theme, setTheme } = useContext(Context);
 
   const toogleOnClick = () => {
-    console.log('click')
     setTheme(theme === "light" ? "dark" : "light");
   };
 
@@ -19,7 +18,7 @@ const ThemeToggle = () => {
     <div className="toggle">
       <img src={SunIcon} alt="" />
       <img
-        className="toggle-icon"
+        className="toggle-icon pointer"
         onClick={toogleOnClick}
         src={toggleIcon}
         alt=""

@@ -6,16 +6,9 @@
   margin: 0;
   font-family: "Kumbh Sans", sans-serif;
 }
-body {
-  background-color: $background;
-}
 h1 {
   color: $white;
 }
-.App {
-  width: 100vw;
-}
-
 header {
   width: 100%;
   height: 160px;
@@ -34,6 +27,18 @@ header {
       gap: 1rem;
     }
   }
+}
+
+body {
+  background-color: $background;
+}
+
+.theme-light {
+}
+.theme-dark {
+}
+.App {
+  width: 100vw;
 }
 
 .filter {
@@ -74,8 +79,8 @@ header {
   }
 
   input {
-    &:hover{
-        cursor: pointer;
+    &:hover {
+      cursor: pointer;
     }
   }
 
@@ -90,10 +95,52 @@ header {
     }
   }
 }
-
-.toggle-icon {
-    cursor: pointer;
+.pointer {
+  cursor: pointer;
 }
+
 .content {
   margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 0 $padding;
+
+  > div {
+    border-radius: 6px;
+    background-color: white;
+    min-height: 228px;
+    padding: 2rem 1.5rem;
+
+    :first-child {
+      color: #6e8098;
+    }
+
+    h4 {
+      padding: 1rem 0rem;
+      color: #19202d;
+    }
+
+    p {
+      color: #6e8098;
+    }
+
+    .tags {
+      display: flex;
+      padding-top: 1rem;
+      gap: 0.5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
 }
