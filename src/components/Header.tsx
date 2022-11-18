@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <header>
       <section>
-        <h1>mlazos</h1>
+        <h1>mlazos projects</h1>
         <ThemeToggle />
       </section>
     </header>

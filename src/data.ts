@@ -7,7 +7,7 @@ const data: Array<Project> = [
         description: 'Cryptocurrencies prices by marketcap and volatility in 24 hours.',
         tags: ['react', 'redux'],
         repositoryUrl: 'https://github.com/mlazos7/crypto-dashboard',
-        siteUrl: 'mlazos7.github.io/crypto-dashboard/',
+        siteUrl: 'https://mlazos7.github.io/crypto-dashboard/',
         thumbail: 'crypto.png'
         
     },
@@ -17,7 +17,7 @@ const data: Array<Project> = [
         description: 'AxieChile academy landing page',
         tags: ['html','css'],
         repositoryUrl: 'https://github.com/mlazos7/axiechile-landing',
-        siteUrl: '* https://www.axiechile.cl/',
+        siteUrl: 'https://www.axiechile.cl/',
         thumbail: 'axie.png'
     },
     {
@@ -26,7 +26,7 @@ const data: Array<Project> = [
         description: 'A frontendmentors challenge',
         tags: ['html','css'],
         repositoryUrl: 'https://github.com/mlazos7/3column-card-component',
-        siteUrl: '* https://mlazos7.github.io/3column-card-component/',
+        siteUrl: 'https://mlazos7.github.io/3column-card-component/',
         thumbail: '3column.png'
     },
     {
@@ -35,7 +35,7 @@ const data: Array<Project> = [
         description: 'App for contest Nebulas(NAS) blockchain',
         tags: ['js'],
         repositoryUrl: 'https://github.com/mlazos7/QuestioNAS-Blockchain',
-        siteUrl: '* https://mlazos7.github.io/QuestioNAS-Blockchain/',
+        siteUrl: 'https://mlazos7.github.io/QuestioNAS-Blockchain/',
         thumbail: 'nebulas.png'
     }
 ]

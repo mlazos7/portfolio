@@ -6,6 +6,6 @@ export interface Project {
     description: string,
     thumbail?: string,
     tags: Array<Tags>,
-    repositoryUrl: string,
-    siteUrl: string
+    repositoryUrl?: string,
+    siteUrl?: string
 }

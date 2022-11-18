@@ -99,49 +99,57 @@ body {
   cursor: pointer;
 }
 
-.content {
+.grid-card {
   margin-top: 5rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 2rem;
   padding: 0 $padding;
+}
 
-  >div {
-    border-radius: 6px;
-    background-color: white;
-    overflow: hidden;
+.card {
+  border-radius: 6px;
+  background-color: white;
+  overflow: hidden;
 
-    img {
-      width: 100%;
-      height: auto;
+  &__thumbail {
+    width: 100%;
+    height: auto;
+  }
+
+  &__body {
+    min-height: 228px;
+    padding: 2rem 1.5rem;
+
+    .small {
+      padding-top: 0.7rem;
+      color: #6e8098;
     }
-    >div {
-      
-      min-height: 228px;
-      padding: 2rem 1.5rem;
 
-      :first-child {
-        // border-top: 1px solid #6e8098;
-        padding-top: 0.7rem;
-        color: #6e8098;
-      }
+    h4 {
+      padding: 1rem 0rem;
+      color: #19202d;
+    }
 
-      h4 {
-        padding: 1rem 0rem;
-        color: #19202d;
-      }
+    p {
+      color: #6e8098;
+    }
 
-      p {
-        color: #6e8098;
-      }
+    .info {
+      display: flex;
+      padding-top: 1rem;
+      justify-content: space-between;
 
-      .tags {
+      div {
         display: flex;
-        padding-top: 1rem;
         gap: 0.5rem;
       }
     }
   }
+}
+
+.card:hover {
+  transform: scale(1.07);
 }
 
 @media only screen and (max-width: 1024px) {

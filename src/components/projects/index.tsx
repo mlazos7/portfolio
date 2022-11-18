@@ -9,7 +9,10 @@ import {
   SiHtml5,
   SiReact,
   SiRedux,
+  SiGithub,
 } from "react-icons/si";
+
+import { GoLinkExternal } from "react-icons/go";
 import { MdDisabledByDefault } from "react-icons/md";
 
 const Icon = ({ tag }: { tag: Tags }) => {
@@ -32,30 +35,57 @@ const Icon = ({ tag }: { tag: Tags }) => {
 };
 
 const projectList = projects.map((item) => (
-  <div key={item.id}>
-    <img src={item.thumbail} alt={`preview ${item.projectName}`} />
-    <div>
-      <small className="header">5d ago.</small>
+  <div key={item.id} className="card">
+    <img
+      src={item.thumbail}
+      alt={`preview ${item.projectName}`}
+      className="card__thumbail"
+    />
+    <div className="card__body">
+      <small>5d ago.</small>
       <h4>{item.projectName}</h4>
       <p>{item.description}</p>
-      <div className="tags">
-        {item.tags.map((tag, index) => (
-          <IconContext.Provider
-            key={index}
-            value={{
-              color: "#5964E0",
-              className: "react-icons",
-              size: "1.5rem",
-            }}
-          >
-            <Icon tag={tag} />
-          </IconContext.Provider>
-        ))}
+      <div className="info">
+        <IconContext.Provider
+          value={{
+            color: "#5964E0",
+            className: "react-icons",
+            size: "1.8rem",
+          }}
+        >
+          <div>
+            {item.tags.map((tag, index) => (
+              <Icon key={index} tag={tag} />
+            ))}
+          </div>
+          <div className="pointer">
+            {item.repositoryUrl && (
+              <>
+                <a
+                  href={item.repositoryUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Github"
+                >
+                  <SiGithub />
+                </a>
+                <a
+                  href={item.siteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Website"
+                >
+                  <GoLinkExternal />
+                </a>
+              </>
+            )}
+          </div>
+        </IconContext.Provider>
       </div>
     </div>
   </div>
 ));
 
-const ProjectList = () => <div className="content">{projectList}</div>;
+const ProjectList = () => <div className="grid-card">{projectList}</div>;
 
 export { ProjectList };
