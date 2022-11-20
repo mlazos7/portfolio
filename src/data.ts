@@ -2,7 +2,7 @@ import { Project } from "./types"
 
 const data: Array<Project> = [
     {
-        id: 1,
+        id: '1',
         projectName: 'Cryptocurrencies Dashboard',
         description: 'Cryptocurrencies prices by marketcap and volatility in 24 hours.',
         tags: ['react', 'redux'],
@@ -12,7 +12,7 @@ const data: Array<Project> = [
         
     },
     {
-        id: 2,
+        id: '2',
         projectName: 'AxieChile',
         description: 'AxieChile academy landing page',
         tags: ['html','css'],
@@ -21,7 +21,7 @@ const data: Array<Project> = [
         thumbail: 'axie.png'
     },
     {
-        id: 3,
+        id: '3',
         projectName: 'Column card component',
         description: 'A frontendmentors challenge',
         tags: ['html','css'],
@@ -30,7 +30,7 @@ const data: Array<Project> = [
         thumbail: '3column.png'
     },
     {
-        id: 4,
+        id: '4',
         projectName: 'QuestioNAS',
         description: 'App for contest Nebulas(NAS) blockchain',
         tags: ['js'],
