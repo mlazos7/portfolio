@@ -31,12 +31,9 @@ header {
 
 body {
   background-color: $background;
+  padding-bottom: 1rem;
 }
 
-.theme-light {
-}
-.theme-dark {
-}
 .App {
   width: 100vw;
 }
@@ -149,7 +146,8 @@ body {
 }
 
 .card:hover {
-  transform: scale(1.07);
+  transform: scale(1.04);
+
 }
 
 @media only screen and (max-width: 1024px) {
