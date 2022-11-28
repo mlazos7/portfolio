@@ -50,7 +50,9 @@ body {
   gap: 1rem;
 
   &-large {
-    grid-template-columns: 4fr 3fr 2fr;
+    // grid-template-columns: 4fr 3fr 2fr;
+    grid-template-columns: 1fr;
+
   }
 
   &-small {

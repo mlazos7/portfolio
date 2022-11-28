@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import "./assets/styles/index.scss";
-import { Filter, SmallFilter } from "./components/Filter";
+import { Filter } from "./components/Filter";
 import { Header } from "./components/Header";
 import { ProjectList } from "./components/projects";
 import { Context } from "./context";
-import { useMediaQuery } from "./hooks/useMediaQuery";
+// import { useMediaQuery } from "./hooks/useMediaQuery";
 import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 import { Project } from "./types";
@@ -12,7 +12,7 @@ import { Provider } from "react-redux";
 import { store } from "./app/store";
 
 function App() {
-  const matches = useMediaQuery("(min-width: 768px)");
+  // const matches = useMediaQuery("(min-width: 768px)");
   const [projects, setProjects] = useState<Array<Project>>();
   const projectRef = collection(db, "projects");
   const [theme, setTheme] = useState("light");
@@ -36,7 +36,8 @@ function App() {
       <div className={`App theme-${theme}`}>
         <Context.Provider value={{ theme, setTheme }}>
           <Header />
-          {matches ? <Filter /> : <SmallFilter />}
+          {/* {matches ? <Filter /> : <SmallFilter />} */}
+          <Filter />
           <ProjectList projects={projects} />
         </Context.Provider>
       </div>

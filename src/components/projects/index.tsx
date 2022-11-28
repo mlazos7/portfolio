@@ -1,6 +1,6 @@
 import React from "react";
-import {useSelector, useDispatch} from "react-redux";
-import { Project, Tags } from "../../types";
+import {useSelector} from "react-redux";
+import { Project } from "../../types";
 import { IconContext } from "react-icons";
 import {
   SiJavascript,
@@ -17,7 +17,7 @@ import { GoLinkExternal } from "react-icons/go";
 import { MdDisabledByDefault } from "react-icons/md";
 import { RootState } from "../../app/store";
 
-const Icon = ({ tag }: { tag: Tags }) => {
+const Icon = ({ tag }: { tag: string }) => {
   switch (tag) {
     case "css":
       return <SiCss3 title={tag} />;
@@ -53,7 +53,7 @@ const ProjectList = ({ projects }: ProjectProps) => {
         projects
           .filter(
             (i) =>
-              i.projectName.includes(filter) || i.description.includes(filter)
+              i.projectName.includes(filter) || i.description.includes(filter) || i.tags.includes(filter)
           )
           .map((item) => (
             <div key={item.id} className="card">
