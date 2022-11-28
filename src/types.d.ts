@@ -1,4 +1,4 @@
-export type Tags = 'css' | 'html' | 'react' | 'redux' | 'js' | 'ts';
+export type Tags = 'css' | 'html' | 'react' | 'redux' | 'js' | 'ts' | 'blockchain';
 
 export interface Project {
     id:string,

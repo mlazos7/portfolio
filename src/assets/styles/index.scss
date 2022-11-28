@@ -151,13 +151,13 @@ body {
 }
 
 @media only screen and (max-width: 1024px) {
-  .content {
+  .grid-card {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .content {
+  .grid-card {
     grid-template-columns: 1fr;
   }
 }

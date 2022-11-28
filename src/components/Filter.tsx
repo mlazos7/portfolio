@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchIcon from "../assets/img/desktop/icon-search.svg";
 import FilterIcon from "../assets/img/desktop/icon-filter.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { setFilter } from "../slice/filterSlice";
+import { RootState } from "../app/store";
 
 const FilterByTitle = () => {
+  const dispatch = useDispatch();
+  const filter = useSelector((state: RootState) => state.filter.value);
+
   return (
     <div>
       <img src={SearchIcon} alt="" />
-      <input type="text" placeholder="Filter by title, description..." />
+      <input
+        value={filter}
+        onChange={(e) => dispatch(setFilter(e.target.value))}
+        type="text"
+        placeholder="Filter by title, description..."
+      />
     </div>
   );
 };
+
 const FilterByTechnology = () => (
   <div>
     <img src={FilterIcon} alt="" />
@@ -34,14 +46,20 @@ const Filter = () => {
 };
 
 const SmallFilter = () => {
+  const dispatch = useDispatch();
+  const filter = useSelector((state: RootState) => state.filter.value);
+
   return (
     <div className="filter filter-small">
-      <input type="text" placeholder="Filter by title, description..." />
+      <input
+        onChange={(e) => dispatch(setFilter(e.target.value))}
+        value={filter}
+        type="text"
+        placeholder="Filter by title, description..."
+      />
       <img src={FilterIcon} alt="" />
     </div>
   );
 };
 
-export {
-    Filter, SmallFilter
-}
+export { Filter, SmallFilter };
