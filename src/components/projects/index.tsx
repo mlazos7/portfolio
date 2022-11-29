@@ -1,5 +1,5 @@
 import React from "react";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import { Project } from "../../types";
 import { IconContext } from "react-icons";
 import {
@@ -44,7 +44,6 @@ type ProjectProps = {
 };
 
 const ProjectList = ({ projects }: ProjectProps) => {
-
   const filter = useSelector((state: RootState) => state.filter.value);
 
   return (
@@ -53,7 +52,9 @@ const ProjectList = ({ projects }: ProjectProps) => {
         projects
           .filter(
             (i) =>
-              i.projectName.includes(filter) || i.description.includes(filter) || i.tags.includes(filter)
+              i.projectName.includes(filter) ||
+              i.description.includes(filter) ||
+              i.tags.includes(filter)
           )
           .map((item) => (
             <div key={item.id} className="card">
@@ -81,8 +82,8 @@ const ProjectList = ({ projects }: ProjectProps) => {
                       ))}
                     </div>
                     <div className="pointer">
-                      {item.repositoryUrl && (
-                        <>
+                      <>
+                        {item.repositoryUrl && (
                           <a
                             href={item.repositoryUrl}
                             target="_blank"
@@ -91,6 +92,8 @@ const ProjectList = ({ projects }: ProjectProps) => {
                           >
                             <SiGithub />
                           </a>
+                        )}
+                        {item.siteUrl !== "" ? (
                           <a
                             href={item.siteUrl}
                             target="_blank"
@@ -99,8 +102,10 @@ const ProjectList = ({ projects }: ProjectProps) => {
                           >
                             <GoLinkExternal />
                           </a>
-                        </>
-                      )}
+                        ) : (
+                          <></>
+                        )}
+                      </>
                     </div>
                   </IconContext.Provider>
                 </div>
